@@ -1,0 +1,34 @@
+CONTROLE FAMILIAR — PROTÓTIPO 0.1
+
+O QUE JÁ EXISTE
+- Projeto Android em Kotlin, com modos Pai e Filha.
+- Tela do modo Pai que gera um código numérico demonstrativo.
+- Tela do modo Filha que solicita consentimento pelo diálogo oficial de MediaProjection.
+- Pipeline GitHub Actions que compila um APK de depuração.
+
+O QUE AINDA NÃO EXISTE
+- Pareamento real entre celulares; o código ainda não é transmitido nem validado.
+- Envio/recepção de vídeo, espelhamento remoto, autenticação ou servidor de sinalização.
+- APK compilado ou validação em Galaxy A11. O computador desta sessão não tem Java, Gradle, adb ou Android Studio disponíveis.
+
+GERAR O APK PELO GITHUB (Windows)
+1. Extraia ControleFamiliar-Projeto.zip.
+2. Crie um repositório no GitHub e envie os arquivos e pastas do diretório ControleFamiliar para a raiz do repositório.
+3. No GitHub, abra Actions > Gerar APK de teste > Run workflow.
+4. Quando terminar, abra a execução e baixe o artefato controle-familiar-debug-apk.
+5. Extraia o arquivo app-debug.apk.
+6. Transfira o APK para o Galaxy A11 e abra-o. O Android poderá pedir que você permita instalar apps dessa fonte.
+
+GERAR PELO ANDROID STUDIO
+1. Instale Android Studio com Android SDK Platform 35 e JDK 17.
+2. Abra a pasta ControleFamiliar no Android Studio e aguarde a sincronização do Gradle.
+3. Use Build > Build Bundle(s) / APK(s) > Build APK(s).
+4. O APK de depuração ficará em app/build/outputs/apk/debug/app-debug.apk.
+
+O APK é de depuração e não está assinado para publicação. Em cada tentativa de captura, a pessoa usando o aparelho precisa aceitar o diálogo do Android. Este protótipo apenas demonstra a solicitação de consentimento; aceitar não inicia transmissão e não envia imagem a nenhum outro aparelho.
+
+CONFIGURAÇÃO DE BUILD
+- Android Gradle Plugin 8.13.2
+- Gradle 8.13 (no GitHub Actions)
+- Kotlin 2.2.21
+- compileSdk 35, minSdk 23, targetSdk 35
