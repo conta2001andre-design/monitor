@@ -37,7 +37,7 @@ class MainActivity : Activity() {
         root.addView(label("Modo Pai", 26f, true))
         root.addView(label("Demonstração: gere um código temporário para parear os aparelhos. O vínculo remoto ainda não está conectado a um servidor.", 16f))
         root.addView(button("Gerar código de pareamento") {
-            val code = (100000..999999).random(SecureRandom())
+          val code = SecureRandom().nextInt(900000) + 100000
             status.text = "Código demonstrativo: $code\nDigite-o no aparelho Filha. Este protótipo ainda não valida o código entre aparelhos."
         })
         status = label("Nenhum código gerado.", 18f, true)
